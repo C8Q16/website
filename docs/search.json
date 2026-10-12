@@ -39,7 +39,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "SEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
+    "text": "How Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
@@ -159,5 +159,54 @@
     "title": "SEPTA Metro and Trolley: A Guide for a New Penn Student",
     "section": "6 Relative files",
     "text": "6 Relative files\n\nRead/Download R code\nRead/Download PDF file"
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html",
+    "href": "blog/posts/post3/blog3.html",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "",
+    "text": "Labor force participation is an important indicator of how different groups engage with the U.S. labor market. In this post, I use IPUMS Current Population Survey (CPS) microdata to examine how labor force participation varies across age, gender, and educational attainment. The analysis uses monthly CPS observations from 2020 through 2025 and focuses on individuals age 16 and older. I use the CPS person-level final weight (WTFINL) when calculating participation rates so that the results reflect the U.S. population rather than simply the raw survey sample."
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html#labor-force-participation-across-age",
+    "href": "blog/posts/post3/blog3.html#labor-force-participation-across-age",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "Labor Force Participation Across Age",
+    "text": "Labor Force Participation Across Age\nThe first visualization shows a clear life-cycle pattern in labor force participation.\n\n\n\n\n\n\nFigure 1: Labor Force Participation Rate by Age Group, U.S., 2020–2025.\n\n\n\nThe weighted participation rate is 55.7% among individuals ages 16–24, but it rises sharply to 83.0% among those ages 25–34 and 83.5% among those ages 35–44. Participation remains relatively high among people ages 45–54 at 81.7%, before declining to 65.8% for ages 55–64. Among people age 65 and older, the rate falls to only 19.7%. This pattern suggests substantial differences in labor-force attachment across stages of the life cycle. Younger people may still be completing their education, while older individuals are more likely to have left the labor force."
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html#gender-differences-across-the-life-cycle",
+    "href": "blog/posts/post3/blog3.html#gender-differences-across-the-life-cycle",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "Gender Differences Across the Life Cycle",
+    "text": "Gender Differences Across the Life Cycle\nThe second visualization adds gender to the analysis.\n\n\n\n\n\n\nFigure 2: Labor Force Participation Rate by Age and Gender, U.S., 2020–2025.\n\n\n\nThe age pattern differs noticeably between men and women. Among 16–24-year-olds, participation is relatively similar: 56.5% for men and 54.9% for women. However, the difference becomes larger among prime-age adults. For example, among people ages 35–44, participation is 90.1% for men compared with 76.9% for women, a difference of 13.2 percentage points. The gap remains among older workers: participation among those age 65 and older is 24.0% for men and 16.1% for women."
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html#education-and-labor-force-participation",
+    "href": "blog/posts/post3/blog3.html#education-and-labor-force-participation",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "Education and Labor Force Participation",
+    "text": "Education and Labor Force Participation\nThe third visualization combines age and educational attainment.\n\n\n\n\n\n\nFigure 3: Labor Force Participation Rate by Age and Education, U.S., 2020–2025.\n\n\n\nThe heatmap shows substantial differences across education groups, particularly among prime-age adults. For example, among individuals ages 35–44, participation ranges from 69.1% for those with less than a high school education to 89.1% for those with a bachelor’s degree or higher. A similar educational gradient appears among people ages 45–54 and 55–64. However, the pattern is less straightforward among younger individuals. Among 16–24-year-olds, for example, participation is 61.5% for those with some college or an associate degree, compared with 68.2% for those with a high school diploma. This may partly reflect the fact that many young adults are still enrolled in education."
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html#conclusion",
+    "href": "blog/posts/post3/blog3.html#conclusion",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "Conclusion",
+    "text": "Conclusion\nOverall, the three visualizations show that labor force participation varies substantially across the life cycle and that gender and educational attainment are associated with different participation patterns. The strongest differences appear among prime-age and older adults. These results are descriptive rather than causal, but they illustrate how CPS microdata can be used to explore important patterns in the U.S. labor market."
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html#appendix-additional-visualizations",
+    "href": "blog/posts/post3/blog3.html#appendix-additional-visualizations",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "Appendix: Additional Visualizations",
+    "text": "Appendix: Additional Visualizations\nThe following figures provide additional descriptive views of the CPS data and are included as supplementary visualizations.\n\n\n\n\n\n\nFigure 4: Age Distribution by Educational Attainment. Boxplots show the distribution of age across education groups.\n\n\n\n\n\n\n\n\n\nFigure 5: Labor Force Participation by Education and Age. Points show weighted participation rates for each age and education group.\n\n\n\n\n\n\n\n\n\nFigure 6: Age Distribution by Gender. Density curves show the weighted age distribution of male and female CPS respondents."
+  },
+  {
+    "objectID": "blog/posts/post3/blog3.html#resources",
+    "href": "blog/posts/post3/blog3.html#resources",
+    "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
+    "section": "Resources",
+    "text": "Resources\n\nR Code\n\nRead R Code (Web Preview)\nDownload R Code{download}\n\nPDF Document\n\nRead PDF (Web Preview)\nDownload PDF{download}"
   }
 ]
