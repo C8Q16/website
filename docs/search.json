@@ -39,7 +39,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "How Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
+    "text": "Why Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
@@ -208,5 +208,75 @@
     "title": "How Does Labor Force Participation Vary Across Age, Gender, and Education?",
     "section": "Resources",
     "text": "Resources\n\nR Code\n\nRead R Code (Web Preview)\nDownload R Code{download}\n\nPDF Document\n\nRead PDF (Web Preview)\nDownload PDF{download}"
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html",
+    "href": "blog/posts/post4/blog4.html",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "",
+    "text": "Computational Methods for Economists — Blog Post 4: Dataset of Choice"
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#introduction",
+    "href": "blog/posts/post4/blog4.html#introduction",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Introduction",
+    "text": "Introduction\nHousing affordability depends on more than the price of a home. It also depends on how quickly household incomes grow and how expensive it is to finance a purchase. This post asks: How has housing affordability changed in the United States since 2000? I use four series from the Federal Reserve Bank of St. Louis (FRED) to examine new-home prices, real median household income, consumer prices, and 30-year mortgage rates."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#data-and-approach",
+    "href": "blog/posts/post4/blog4.html#data-and-approach",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Data and Approach",
+    "text": "Data and Approach\nThe analysis covers 2000–2025 and uses an R script to obtain data programmatically through the FRED API. The series are MSPUS (median sales price of new houses sold), MEHOINUSA672N (real median household income), MORTGAGE30US (30-year fixed mortgage rate), and CPIAUCSL (Consumer Price Index).\nQuarterly home prices, weekly mortgage rates, and monthly CPI are converted to annual averages. Nominal home prices are converted to 2025 dollars using annual-average CPI. I then construct a 2000=100 index, a home-price-to-income ratio, and an illustrative mortgage-payment burden."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#prices-have-risen-faster-than-incomes",
+    "href": "blog/posts/post4/blog4.html#prices-have-risen-faster-than-incomes",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Prices Have Risen Faster Than Incomes",
+    "text": "Prices Have Risen Faster Than Incomes\n\n\n\n\n\n\nFigure 1: Real Home Prices Have Outpaced Household Income\n\n\n\nFigure 1 shows a persistent gap. With 2000 set equal to 100, the real new-home price index reaches about 133 by 2025, while the real median household income index reaches about 119. New-home prices therefore rose roughly 33 percent in real terms, compared with about 19 percent for real median household income.\nThe path was not smooth: prices fell during the housing correction after the mid-2000s boom and then increased strongly. By 2025, however, prices remained well above their income-based benchmark.\nSource: FRED, series MSPUS and MEHOINUSA672N."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#housing-became-more-expensive-relative-to-income",
+    "href": "blog/posts/post4/blog4.html#housing-became-more-expensive-relative-to-income",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Housing Became More Expensive Relative to Income",
+    "text": "Housing Became More Expensive Relative to Income\n\n\n\n\n\n\nFigure 2: U.S. Housing Has Become More Expensive Relative to Income\n\n\n\nFigure 2 puts the affordability question in relative terms. The constructed price-to-income ratio rises from 4.26 in 2000 to 4.75 in 2025, with higher readings during several periods, including around 2022.\nThe important point is that homes became more expensive relative to household income, not simply more expensive in nominal dollars. The ratio also shows that affordability moved with the housing cycle rather than worsening continuously.\nSource: FRED, series MSPUS, MEHOINUSA672N, and CPIAUCSL."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#mortgage-rates-can-amplify-the-burden",
+    "href": "blog/posts/post4/blog4.html#mortgage-rates-can-amplify-the-burden",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Mortgage Rates Can Amplify the Burden",
+    "text": "Mortgage Rates Can Amplify the Burden\n\n\n\n\n\n\nFigure 3: Mortgage Financing Costs Add to Housing Affordability Pressure\n\n\n\nFigure 3 adds the financing side of affordability. Under a hypothetical 20 percent down payment and 30-year fixed-rate mortgage, the estimated annual payment was relatively low around 2020, when mortgage rates were unusually low. It then rose sharply as rates increased after 2021.\nBy 2025, the illustrative payment was about 29 percent of real median household income. This shows why the sticker price is not the whole story: borrowing costs can change how much income is needed to finance a purchase.\nNote: Assumes a 20 percent down payment and a 30-year fixed-rate mortgage; excludes taxes, insurance, and maintenance. Source: FRED, series MSPUS, MEHOINUSA672N, MORTGAGE30US, and CPIAUCSL."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#conclusion",
+    "href": "blog/posts/post4/blog4.html#conclusion",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Conclusion",
+    "text": "Conclusion\nSince 2000, U.S. housing affordability has generally deteriorated. New-home prices have grown faster than real median household income, while mortgage rates can further increase the financing burden. The deterioration was not continuous: affordability improved during the post-2008 correction and the low-rate period around 2020 before worsening again."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#limitations",
+    "href": "blog/posts/post4/blog4.html#limitations",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Limitations",
+    "text": "Limitations\nThis analysis is descriptive rather than causal. MSPUS measures new-home sales, so it does not represent the entire U.S. housing market. The mortgage burden is an illustrative calculation rather than observed household spending and excludes taxes, insurance, and maintenance.\nThe income series is already reported as real income, while nominal home prices are explicitly converted to 2025 dollars, so the analysis focuses mainly on changes over time and relative movements rather than treating the constructed burden as a complete measure of affordability."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#reproducibility",
+    "href": "blog/posts/post4/blog4.html#reproducibility",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Reproducibility",
+    "text": "Reproducibility\nThe accompanying GitHub repository includes the R script and all three figures. The script downloads the data programmatically from FRED, processes the series, calculates the affordability measures, and saves the figures to the images/ folder."
+  },
+  {
+    "objectID": "blog/posts/post4/blog4.html#resources",
+    "href": "blog/posts/post4/blog4.html#resources",
+    "title": "Why Has U.S. Housing Become Less Affordable?",
+    "section": "Resources",
+    "text": "Resources\n\nR Code\n\nRead R Code (Web Preview)\nDownload R Code{download}"
   }
 ]
