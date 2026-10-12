@@ -2,6 +2,7 @@
 title: "The Illusion of Significance: Rethinking the p-value Through A/B Testing"
 author: "Yixin Yang"
 date: "2026-09-14"
+image: "figure1.jpg"
 format:
   html:
     toc: true
@@ -18,9 +19,7 @@ In statistics textbooks, the p-value seems to offer a clear verdict: if $p < 0.0
 
 This paradox reveals the most counterintuitive aspect of the p-value: it is not the probability you think it is. The most common misconception is equating the p-value with the probability that the null hypothesis is true, or $P(H_0 \mid \text{Data})$. We desperately want to know: "Given this data, what is the probability that my experiment actually worked?" But the p-value answers a completely reversed question: $P(\text{Data} \mid H_0)$, which asks, "Assuming my experiment had absolutely no effect, what is the probability of observing a difference this large purely by chance?" This is a transposed conditional probability:
 
-$$
-P(\text{Data} \mid H_0) \neq P(H_0 \mid \text{Data})
-$$
+$$P(\text{Data} \mid H_0) \neq P(H_0 \mid \text{Data})$$
 
 Think of a courtroom: the p-value is not the probability that the defendant is innocent; it is the probability of finding the current evidence *if* the defendant were completely innocent. This logical inversion is why the p-value initially feels so unintuitive.
 
@@ -30,37 +29,27 @@ Think of a courtroom: the p-value is not the probability that the defendant is i
 
 Understanding this helped me navigate the illusions I faced during my internship. When we simultaneously tracked dozens of metrics, even if the product changed nothing, random fluctuations meant roughly 5% of these metrics would naturally show a $p < 0.05$. This is the problem of multiple testing. To filter out these false positives, we cannot blindly trust a single p-value. For a strict control of the family-wise error rate, we use the Bonferroni correction:
 
-$$
-\alpha_{\text{Bonferroni}} = \frac{\alpha}{m}
-$$
+$$\alpha_{\text{Bonferroni}} = \frac{\alpha}{m}$$
 
 where $m$ is the number of hypotheses tested. Alternatively, to control the false discovery rate, we apply the Benjamini-Hochberg (BH) procedure:
 
-$$
-\text{Reject } H_{(i)} \text{ if } p_{(i)} \leq \frac{i}{m} \alpha
-$$
+$$\text{Reject } H_{(i)} \text{ if } p_{(i)} \leq \frac{i}{m} \alpha$$
 
 ![Benjamini-Hochberg Procedure](figure1.jpg){#fig:bh}
 
 Furthermore, we used the Standardized Mean Difference (SMD) to check if our traffic split was truly uniform. If the control and experimental groups were inherently different before the test even began, the post-experiment p-value would be a misleading illusion:
 
-$$
-\text{SMD} = \frac{\bar{X}_{\text{treatment}} - \bar{X}_{\text{control}}}{\sqrt{\frac{s_{\text{treatment}}^2 + s_{\text{control}}^2}{2}}}
-$$
+$$\text{SMD} = \frac{\bar{X}_{\text{treatment}} - \bar{X}_{\text{control}}}{\sqrt{\frac{s_{\text{treatment}}^2 + s_{\text{control}}^2}{2}}}$$
 
 ## The Missing Significance
 
 On the other hand, p-values can also fail to detect the truth. Often, a beneficial feature would be launched, but due to insufficient sample size or inherently noisy user behavior, the p-value would fail to reach significance. To address this, we applied CUPED (Controlled-experiment Using Pre-Experiment Data). It uses pre-experiment covariates to reduce variance, allowing a true effect that was previously drowned out by noise to finally emerge:
 
-$$
-Y_{\text{cuped}} = Y - \theta (X - \bar{X})
-$$
+$$Y_{\text{cuped}} = Y - \theta (X - \bar{X})$$
 
 where the optimal $\theta$ is derived as:
 
-$$
-\theta = \frac{\text{Cov}(Y, X)}{\text{Var}(X)}
-$$
+$$\theta = \frac{\text{Cov}(Y, X)}{\text{Var}(X)}$$
 
 ![CUPED Explained](figure2.jpg){#fig:cuped}
 
@@ -72,5 +61,5 @@ Today, the American Statistical Association explicitly warns that "a p-value doe
 
 ## References
 
-- Brenndoerfer, M. (2026, January 9). *Multiple comparisons: FWER, FDR, Bonferroni, Holm*. Michael Brenndoerfer. [https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg](https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg)
-- Sexauer, C. (2024, September 15). *CUPED explained*. Statsig. [https://www.statsig.com/blog/cuped](https://www.statsig.com/blog/cuped)
+- Brenndoerfer, M. (2026, January 9). *Multiple comparisons: FWER, FDR, Bonferroni, Holm*. Michael Brenndoerfer. <https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg>
+- Sexauer, C. (2024, September 15). *CUPED explained*. Statsig. <https://www.statsig.com/blog/cuped>

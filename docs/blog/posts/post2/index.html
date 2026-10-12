@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-06-16">
+<meta name="author" content="Yixin Yang">
+<meta name="dcterms.date" content="2026-09-21">
 
-<title>My Second Blog Post – Student Name</title>
+<title>SEPTA Metro and Trolley: A Guide for a New Penn Student – Student Name</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -120,28 +121,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2</span> Results</a></li>
+  <li><a href="#actionable-insight" id="toc-actionable-insight" class="nav-link" data-scroll-target="#actionable-insight"><span class="header-section-number">3</span> Actionable Insight</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">4</span> Limitations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5</span> Conclusion</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Second Blog Post</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">opinion</div>
-    <div class="quarto-category">labor market</div>
-  </div>
-  </div>
+<h1 class="title">SEPTA Metro and Trolley: A Guide for a New Penn Student</h1>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yixin Yang </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 16, 2026</p>
+      <p class="date">September 21, 2026</p>
     </div>
   </div>
   
@@ -153,8 +168,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="this-is-my-second-blog-post." class="level2">
-<h2 class="anchored" data-anchor-id="this-is-my-second-blog-post.">This is my second blog post.</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>For a new student at the University of Pennsylvania (Penn), public transportation is an important part of getting around Philadelphia. Students may need to travel to different neighborhoods, shopping areas, restaurants, or other parts of the city. SEPTA provides several types of public transportation, including Metro and trolley services. However, for someone who is new to Philadelphia, it can be difficult to understand which lines and stations are most convenient from the Penn campus.</p>
+<p>In this project, I used web scraping to collect SEPTA transportation information and answer a practical question: <em>Which SEPTA Metro and Trolley lines are most accessible to a new Penn student?</em></p>
+<p>The data came from the OpenDataPhilly website, specifically the SEPTA “Routes, Stops, and Locations” dataset. I used the <code>rvest</code> package in R to scrape the webpage and identify the available CSV data files. I then used the station and stop datasets to examine SEPTA Metro and trolley routes. The datasets contain information such as route names, station or stop names, and geographic coordinates.</p>
+<p>For the Metro data, I used the High Speed Stations dataset. It contains information for three main routes in the dataset: B, L, and M. For the trolley data, I used the Trolley Stations dataset, which contains trolley stop names, route abbreviations, and latitude and longitude coordinates.</p>
+<p>After collecting the data, I cleaned the datasets and combined the Metro and trolley information. I used an approximate location for the Penn campus as the reference point. Then, I calculated the approximate straight-line distance between Penn and each SEPTA station or trolley stop. This allowed me to compare the geographic accessibility of different SEPTA lines.</p>
+</section>
+<section id="results" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="results"><span class="header-section-number">2</span> Results</h2>
+<p>The first chart shows the nearest SEPTA Metro or trolley stop for each route. The trolley stops around 36th Street and 33rd Street are very close to Penn. The L Line also has a station at 34th Street, which is approximately 0.27 miles from the reference point on the Penn campus. These locations are particularly close compared with some other SEPTA routes.</p>
+<div id="fig-chart1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chart1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="picture1.png" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chart1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Nearest SEPTA Metro or Trolley Stop to Penn
+</figcaption>
+</figure>
+</div>
+<p>The B Line has a nearby station at Walnut–Locust, although it is farther from Penn than the L Line and the trolley stops. The M Line and D routes have their closest stops several miles away from Penn. Therefore, based only on geographic distance, these routes are less directly accessible from the Penn campus.</p>
+<p>The second chart shows the number of SEPTA stops within one mile of Penn. The results show that several trolley routes and the L Line have stops within this distance. This provides another way to understand which routes may be convenient for a student who wants to walk to a SEPTA stop.</p>
+<div id="fig-chart2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chart2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="picture2.png" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chart2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: SEPTA Stops Within One Mile of Penn
+</figcaption>
+</figure>
+</div>
+<p>The third chart provides another visualization of the SEPTA transportation data collected for this project.</p>
+<div id="fig-chart3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chart3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="picture3.png" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chart3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: SEPTA Metro and Trolley Data
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="actionable-insight" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="actionable-insight"><span class="header-section-number">3</span> Actionable Insight</h2>
+<p>For a new Penn student, the results suggest that the trolley routes around 33rd and 36th Streets and the L Line at 34th Street are geographically close to campus. These routes may therefore be useful starting points when learning how to use SEPTA.</p>
+<p>The results also show why understanding the location of stops is useful. A student does not necessarily need to know every SEPTA route immediately. Instead, they can first learn the stations and trolley stops that are closest to campus and then use those locations as starting points for trips around Philadelphia.</p>
+<p>However, distance alone does not determine whether a route is convenient. Travel time, destination, service frequency, transfers, and current service conditions can also affect the usefulness of a route. Therefore, this analysis should be viewed as a simple geographic comparison rather than a complete evaluation of SEPTA service.</p>
+</section>
+<section id="limitations" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="limitations"><span class="header-section-number">4</span> Limitations</h2>
+<p>There are several limitations to this analysis. First, the distance calculation is an approximate straight-line distance rather than actual walking distance. A station that is geographically close may require a longer walking route because of streets, buildings, or other obstacles.</p>
+<p>Second, some SEPTA stops are shared by multiple trolley routes. The dataset may represent these routes together, so the route names in the charts can sometimes appear as combinations such as T1, T2, T3, T4, and T5.</p>
+<p>Finally, the datasets used in this project are GIS datasets rather than real-time service information. SEPTA schedules and service conditions can change, so students should check current SEPTA information before planning a specific trip.</p>
+</section>
+<section id="conclusion" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5</span> Conclusion</h2>
+<p>This project demonstrates how web scraping can be used to answer a practical transportation question. By scraping SEPTA information from OpenDataPhilly and analyzing station locations in R, I was able to compare the geographic accessibility of different Metro and trolley routes from the Penn campus. The analysis shows that several trolley stops and the L Line are located relatively close to Penn, providing useful starting points for a new student learning to navigate Philadelphia using SEPTA.</p>
 
 
 </section>

@@ -201,9 +201,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In statistics textbooks, the p-value seems to offer a clear verdict: if <span class="math inline">\(p &lt; 0.05\)</span>, the result is significant, and the experiment is a success. However, when I stepped into the role of a data science intern at an internet company, reality presented a very different picture. During my time running A/B tests, I frequently encountered experiments with incredibly small p-values that yielded zero actual business benefit. Conversely, genuinely effective features sometimes failed to show significance due to high variance.</p>
 <p>This paradox reveals the most counterintuitive aspect of the p-value: it is not the probability you think it is. The most common misconception is equating the p-value with the probability that the null hypothesis is true, or <span class="math inline">\(P(H_0 \mid \text{Data})\)</span>. We desperately want to know: “Given this data, what is the probability that my experiment actually worked?” But the p-value answers a completely reversed question: <span class="math inline">\(P(\text{Data} \mid H_0)\)</span>, which asks, “Assuming my experiment had absolutely no effect, what is the probability of observing a difference this large purely by chance?” This is a transposed conditional probability:</p>
-<p><span class="math display">\[
-P(\text{Data} \mid H_0) \neq P(H_0 \mid \text{Data})
-\]</span></p>
+<p><span class="math display">\[P(\text{Data} \mid H_0) \neq P(H_0 \mid \text{Data})\]</span></p>
 <p>Think of a courtroom: the p-value is not the probability that the defendant is innocent; it is the probability of finding the current evidence <em>if</em> the defendant were completely innocent. This logical inversion is why the p-value initially feels so unintuitive.</p>
 <div id="fig:pvalue" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -215,13 +213,9 @@ P(\text{Data} \mid H_0) \neq P(H_0 \mid \text{Data})
 <section id="the-illusion-of-significance" class="level2">
 <h2 class="anchored" data-anchor-id="the-illusion-of-significance">The Illusion of Significance</h2>
 <p>Understanding this helped me navigate the illusions I faced during my internship. When we simultaneously tracked dozens of metrics, even if the product changed nothing, random fluctuations meant roughly 5% of these metrics would naturally show a <span class="math inline">\(p &lt; 0.05\)</span>. This is the problem of multiple testing. To filter out these false positives, we cannot blindly trust a single p-value. For a strict control of the family-wise error rate, we use the Bonferroni correction:</p>
-<p><span class="math display">\[
-\alpha_{\text{Bonferroni}} = \frac{\alpha}{m}
-\]</span></p>
+<p><span class="math display">\[\alpha_{\text{Bonferroni}} = \frac{\alpha}{m}\]</span></p>
 <p>where <span class="math inline">\(m\)</span> is the number of hypotheses tested. Alternatively, to control the false discovery rate, we apply the Benjamini-Hochberg (BH) procedure:</p>
-<p><span class="math display">\[
-\text{Reject } H_{(i)} \text{ if } p_{(i)} \leq \frac{i}{m} \alpha
-\]</span></p>
+<p><span class="math display">\[\text{Reject } H_{(i)} \text{ if } p_{(i)} \leq \frac{i}{m} \alpha\]</span></p>
 <div id="fig:bh" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figure1.jpg" class="img-fluid figure-img"></p>
@@ -229,20 +223,14 @@ P(\text{Data} \mid H_0) \neq P(H_0 \mid \text{Data})
 </figure>
 </div>
 <p>Furthermore, we used the Standardized Mean Difference (SMD) to check if our traffic split was truly uniform. If the control and experimental groups were inherently different before the test even began, the post-experiment p-value would be a misleading illusion:</p>
-<p><span class="math display">\[
-\text{SMD} = \frac{\bar{X}_{\text{treatment}} - \bar{X}_{\text{control}}}{\sqrt{\frac{s_{\text{treatment}}^2 + s_{\text{control}}^2}{2}}}
-\]</span></p>
+<p><span class="math display">\[\text{SMD} = \frac{\bar{X}_{\text{treatment}} - \bar{X}_{\text{control}}}{\sqrt{\frac{s_{\text{treatment}}^2 + s_{\text{control}}^2}{2}}}\]</span></p>
 </section>
 <section id="the-missing-significance" class="level2">
 <h2 class="anchored" data-anchor-id="the-missing-significance">The Missing Significance</h2>
 <p>On the other hand, p-values can also fail to detect the truth. Often, a beneficial feature would be launched, but due to insufficient sample size or inherently noisy user behavior, the p-value would fail to reach significance. To address this, we applied CUPED (Controlled-experiment Using Pre-Experiment Data). It uses pre-experiment covariates to reduce variance, allowing a true effect that was previously drowned out by noise to finally emerge:</p>
-<p><span class="math display">\[
-Y_{\text{cuped}} = Y - \theta (X - \bar{X})
-\]</span></p>
+<p><span class="math display">\[Y_{\text{cuped}} = Y - \theta (X - \bar{X})\]</span></p>
 <p>where the optimal <span class="math inline">\(\theta\)</span> is derived as:</p>
-<p><span class="math display">\[
-\theta = \frac{\text{Cov}(Y, X)}{\text{Var}(X)}
-\]</span></p>
+<p><span class="math display">\[\theta = \frac{\text{Cov}(Y, X)}{\text{Var}(X)}\]</span></p>
 <div id="fig:cuped" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figure2.jpg" class="img-fluid figure-img"></p>
@@ -258,8 +246,8 @@ Y_{\text{cuped}} = Y - \theta (X - \bar{X})
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Brenndoerfer, M. (2026, January 9). <em>Multiple comparisons: FWER, FDR, Bonferroni, Holm</em>. Michael Brenndoerfer. <a href="https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg">https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg</a></li>
-<li>Sexauer, C. (2024, September 15). <em>CUPED explained</em>. Statsig. <a href="https://www.statsig.com/blog/cuped">https://www.statsig.com/blog/cuped</a></li>
+<li>Brenndoerfer, M. (2026, January 9). <em>Multiple comparisons: FWER, FDR, Bonferroni, Holm</em>. Michael Brenndoerfer. <a href="https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg" class="uri">https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg</a></li>
+<li>Sexauer, C. (2024, September 15). <em>CUPED explained</em>. Statsig. <a href="https://www.statsig.com/blog/cuped" class="uri">https://www.statsig.com/blog/cuped</a></li>
 </ul>
 
 
