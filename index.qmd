@@ -10,7 +10,7 @@ title: ""
 ::: {.column width="65%"}
 ![](images/UniversityofPennsylvania_FullLogo_RGB.png){width="250px"}
 
-# Student Name
+# Yixin Yang
 
 University of Pennsylvaina
 
@@ -20,9 +20,9 @@ Welcome to my personal website.
 
 <div>
   <a href="https://github.com/USERNAME"><i class="bi bi-github fs-3"></i></a>
-  <a href="https://linkedin.com/in/USERNAME"><i class="bi bi-linkedin fs-3"></i></a>
+  <a href="https://www.linkedin.com/in/yixin-yang-04417b361" target="_blank"><i class="bi bi-linkedin fs-3"></i></a>
   <a href="resume.qmd"><i class="bi bi-file-earmark-person-fill fs-3"></i></a>
-  <a href="mailto:student@email.com"><i class="bi bi-envelope-fill fs-3"></i></a>
+  <a href="mailto:yixiny@sas.upenn.edu"><i class="bi bi-envelope-fill fs-3"></i></a>
 </div>
 :::
 :::::
