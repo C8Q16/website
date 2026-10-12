@@ -7,11 +7,7 @@ format:
     toc: true
     number-sections: true
     fig-cap-location: bottom
-  pdf:
-    documentclass: article
-    geometry:
-      - margin=1in
-    linestretch: 1.5
+
 execute:
   echo: false
   warning: false
@@ -65,3 +61,8 @@ Finally, the datasets used in this project are GIS datasets rather than real-tim
 ## Conclusion
 
 This project demonstrates how web scraping can be used to answer a practical transportation question. By scraping SEPTA information from OpenDataPhilly and analyzing station locations in R, I was able to compare the geographic accessibility of different Metro and trolley routes from the Penn campus. The analysis shows that several trolley stops and the L Line are located relatively close to Penn, providing useful starting points for a new student learning to navigate Philadelphia using SEPTA.
+
+## Relative files
+
+- [Read/Download R code](blog2.R){target="_blank"}
+- [Read/Download PDF file](blog2.PDF){target="_blank"}
