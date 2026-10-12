@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Student Name",
-    "section": "",
-    "text": "Student Name\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
-  },
-  {
     "objectID": "bio.html",
     "href": "bio.html",
     "title": "About Me",
@@ -46,14 +39,49 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "My First Blog Post\n\n\n\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Blog Post\n\n\n\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "The Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Blog Post\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
     "href": "blog/posts/post1/Untitled.html",
-    "title": "My First Blog Post",
+    "title": "The Illusion of Significance: Rethinking the p-value Through A/B Testing",
     "section": "",
-    "text": "This is my first blog post. Example \\(\\LaTeX\\) equation: \\(\\frac{1}{2}\\sum_{i=1}^nx_i\\)"
+    "text": "In statistics textbooks, the p-value seems to offer a clear verdict: if \\(p &lt; 0.05\\), the result is significant, and the experiment is a success. However, when I stepped into the role of a data science intern at an internet company, reality presented a very different picture. During my time running A/B tests, I frequently encountered experiments with incredibly small p-values that yielded zero actual business benefit. Conversely, genuinely effective features sometimes failed to show significance due to high variance.\nThis paradox reveals the most counterintuitive aspect of the p-value: it is not the probability you think it is. The most common misconception is equating the p-value with the probability that the null hypothesis is true, or \\(P(H_0 \\mid \\text{Data})\\). We desperately want to know: “Given this data, what is the probability that my experiment actually worked?” But the p-value answers a completely reversed question: \\(P(\\text{Data} \\mid H_0)\\), which asks, “Assuming my experiment had absolutely no effect, what is the probability of observing a difference this large purely by chance?” This is a transposed conditional probability:\n\\[\nP(\\text{Data} \\mid H_0) \\neq P(H_0 \\mid \\text{Data})\n\\]\nThink of a courtroom: the p-value is not the probability that the defendant is innocent; it is the probability of finding the current evidence if the defendant were completely innocent. This logical inversion is why the p-value initially feels so unintuitive.\n\n\n\nThe geometric meaning of the p-value: the probability of observing a result as extreme as the current one, assuming the null hypothesis (\\(H_0\\)) is true."
+  },
+  {
+    "objectID": "blog/posts/post1/Untitled.html#introduction",
+    "href": "blog/posts/post1/Untitled.html#introduction",
+    "title": "The Illusion of Significance: Rethinking the p-value Through A/B Testing",
+    "section": "",
+    "text": "In statistics textbooks, the p-value seems to offer a clear verdict: if \\(p &lt; 0.05\\), the result is significant, and the experiment is a success. However, when I stepped into the role of a data science intern at an internet company, reality presented a very different picture. During my time running A/B tests, I frequently encountered experiments with incredibly small p-values that yielded zero actual business benefit. Conversely, genuinely effective features sometimes failed to show significance due to high variance.\nThis paradox reveals the most counterintuitive aspect of the p-value: it is not the probability you think it is. The most common misconception is equating the p-value with the probability that the null hypothesis is true, or \\(P(H_0 \\mid \\text{Data})\\). We desperately want to know: “Given this data, what is the probability that my experiment actually worked?” But the p-value answers a completely reversed question: \\(P(\\text{Data} \\mid H_0)\\), which asks, “Assuming my experiment had absolutely no effect, what is the probability of observing a difference this large purely by chance?” This is a transposed conditional probability:\n\\[\nP(\\text{Data} \\mid H_0) \\neq P(H_0 \\mid \\text{Data})\n\\]\nThink of a courtroom: the p-value is not the probability that the defendant is innocent; it is the probability of finding the current evidence if the defendant were completely innocent. This logical inversion is why the p-value initially feels so unintuitive.\n\n\n\nThe geometric meaning of the p-value: the probability of observing a result as extreme as the current one, assuming the null hypothesis (\\(H_0\\)) is true."
+  },
+  {
+    "objectID": "blog/posts/post1/Untitled.html#the-illusion-of-significance",
+    "href": "blog/posts/post1/Untitled.html#the-illusion-of-significance",
+    "title": "The Illusion of Significance: Rethinking the p-value Through A/B Testing",
+    "section": "The Illusion of Significance",
+    "text": "The Illusion of Significance\nUnderstanding this helped me navigate the illusions I faced during my internship. When we simultaneously tracked dozens of metrics, even if the product changed nothing, random fluctuations meant roughly 5% of these metrics would naturally show a \\(p &lt; 0.05\\). This is the problem of multiple testing. To filter out these false positives, we cannot blindly trust a single p-value. For a strict control of the family-wise error rate, we use the Bonferroni correction:\n\\[\n\\alpha_{\\text{Bonferroni}} = \\frac{\\alpha}{m}\n\\]\nwhere \\(m\\) is the number of hypotheses tested. Alternatively, to control the false discovery rate, we apply the Benjamini-Hochberg (BH) procedure:\n\\[\n\\text{Reject } H_{(i)} \\text{ if } p_{(i)} \\leq \\frac{i}{m} \\alpha\n\\]\n\n\n\nBenjamini-Hochberg Procedure\n\n\nFurthermore, we used the Standardized Mean Difference (SMD) to check if our traffic split was truly uniform. If the control and experimental groups were inherently different before the test even began, the post-experiment p-value would be a misleading illusion:\n\\[\n\\text{SMD} = \\frac{\\bar{X}_{\\text{treatment}} - \\bar{X}_{\\text{control}}}{\\sqrt{\\frac{s_{\\text{treatment}}^2 + s_{\\text{control}}^2}{2}}}\n\\]"
+  },
+  {
+    "objectID": "blog/posts/post1/Untitled.html#the-missing-significance",
+    "href": "blog/posts/post1/Untitled.html#the-missing-significance",
+    "title": "The Illusion of Significance: Rethinking the p-value Through A/B Testing",
+    "section": "The Missing Significance",
+    "text": "The Missing Significance\nOn the other hand, p-values can also fail to detect the truth. Often, a beneficial feature would be launched, but due to insufficient sample size or inherently noisy user behavior, the p-value would fail to reach significance. To address this, we applied CUPED (Controlled-experiment Using Pre-Experiment Data). It uses pre-experiment covariates to reduce variance, allowing a true effect that was previously drowned out by noise to finally emerge:\n\\[\nY_{\\text{cuped}} = Y - \\theta (X - \\bar{X})\n\\]\nwhere the optimal \\(\\theta\\) is derived as:\n\\[\n\\theta = \\frac{\\text{Cov}(Y, X)}{\\text{Var}(X)}\n\\]\n\n\n\nCUPED Explained"
+  },
+  {
+    "objectID": "blog/posts/post1/Untitled.html#historical-context",
+    "href": "blog/posts/post1/Untitled.html#historical-context",
+    "title": "The Illusion of Significance: Rethinking the p-value Through A/B Testing",
+    "section": "Historical Context",
+    "text": "Historical Context\nHistorically, this awkward position of the p-value is nothing new. In 1925, statistician Ronald Fisher casually suggested using a 5% threshold for agricultural experiments. He likely never anticipated that this arbitrary cutoff would become an almost sacred dogma in both academia and industry for nearly a century.\nToday, the American Statistical Association explicitly warns that “a p-value does not measure the size of an effect or the importance of a result.” My internship experience is a perfect testament to this. The p-value is merely a measure of “surprise.” It does not represent business value, nor can it be interpreted in isolation from experimental design, traffic quality, or data variance. Understanding the counterintuitive nature of the p-value is not about rejecting it, but about approaching data—and business intuition—with a healthy dose of humility."
+  },
+  {
+    "objectID": "blog/posts/post1/Untitled.html#references",
+    "href": "blog/posts/post1/Untitled.html#references",
+    "title": "The Illusion of Significance: Rethinking the p-value Through A/B Testing",
+    "section": "References",
+    "text": "References\n\nBrenndoerfer, M. (2026, January 9). Multiple comparisons: FWER, FDR, Bonferroni, Holm. Michael Brenndoerfer. https://mbrenndoerfer.com/writing/multiple-comparisons-fwer-fdr-bonferroni-holm-benjamini-hochberg\nSexauer, C. (2024, September 15). CUPED explained. Statsig. https://www.statsig.com/blog/cuped"
   },
   {
     "objectID": "resume.html",
@@ -68,6 +96,13 @@
     "title": "Resume",
     "section": "Resume PDF",
     "text": "Resume PDF"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Student Name",
+    "section": "",
+    "text": "Student Name\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
   },
   {
     "objectID": "about.html",
