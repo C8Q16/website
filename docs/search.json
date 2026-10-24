@@ -39,7 +39,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "The Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
+    "text": "From Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
@@ -285,5 +285,68 @@
     "title": "The Geography of Rent Burden in Philadelphia",
     "section": "",
     "text": "Computational Methods for Economists — Blog Post 5\n\nIntroduction\nHousing affordability is often discussed in terms of rising rents, but housing costs alone do not fully capture the financial pressure experienced by households. A more informative measure is rent burden: the share of renter households spending at least 30% of their income on gross rent. Examining this measure geographically can reveal whether housing affordability challenges are distributed evenly across a city or concentrated in particular neighborhoods.\nThis post explores two questions: Where is rent burden concentrated across Philadelphia, and how is its spatial distribution associated with household income?\n\n\nData and Methods\nThe analysis uses the U.S. Census Bureau’s 2020–2024 American Community Survey (ACS) five-year estimates at the Census Tract level. Rent burden is calculated using Table B25070, which reports gross rent as a percentage of household income. Households whose rent-to-income ratios cannot be computed are excluded from the denominator. Median household income comes from Table B19013.\nUsing R, I combined the estimates with Census Tract geographic boundaries and created two choropleth maps. I also constructed a scatter plot to examine the relationship between median household income and rent burden across tracts. Pearson and Spearman correlation coefficients were calculated to assess the strength and direction of this association.\n\n\nResults: A Spatially Uneven Housing Burden\nThe map reveals substantial variation in rent burden across Philadelphia. Some Census Tracts have considerably higher rates than others, suggesting that housing affordability challenges are not geographically uniform. Across the city, the estimated rent-burden rate is 52.3% among renter households whose rent-to-income ratios can be computed. The median tract-level rate is 54.0%, indicating that a typical tract also has a high share of rent-burdened renters.\n\n\n\n\n\n\nFigure 1: Figure 1. The Geography of Rent Burden in Philadelphia. Share of renter households spending at least 30% of their income on gross rent. Source: 2020–2024 ACS five-year estimates, Table B25070.\n\n\n\nThe income map reveals another important dimension of Philadelphia’s geography: household income also varies considerably across Census Tracts. Comparing the two maps suggests that understanding housing affordability requires considering both housing costs and residents’ economic resources. However, visual similarities alone cannot establish why particular areas experience higher rent burdens.\n\n\n\n\n\n\nFigure 2: Figure 2. The Geography of Household Income. Median household income by Census Tract, in 2024 inflation-adjusted dollars. Source: 2020–2024 ACS five-year estimates, Table B19013.\n\n\n\n\n\nIncome and Rent Burden\nThe scatter plot provides quantitative evidence of the relationship between household income and rent burden. Pearson’s correlation is -0.546, while Spearman’s correlation is -0.595. Both indicate a moderate negative association: higher-income tracts generally tend to have lower rent-burden rates. The slightly stronger negative Spearman correlation suggests that this overall pattern is also visible when comparing the rankings of tracts.\n\n\n\n\n\n\nFigure 3: Figure 3. Household Income and Rent Burden. Each point represents one Philadelphia Census Tract. The fitted line summarizes the overall linear association. Source: 2020–2024 ACS five-year estimates.\n\n\n\nNevertheless, substantial variation remains among tracts with similar incomes. Income alone therefore does not fully explain differences in housing affordability. Other factors, including rental prices, housing characteristics, and household composition, may also be relevant, although they are not directly examined in this analysis.\n\n\nConclusion\nPhiladelphia’s housing affordability challenge has a clear geographic dimension. Rent burden varies substantially across Census Tracts and is negatively associated with neighborhood-level median household income. These findings highlight the importance of examining local conditions rather than relying solely on citywide averages.\nThis analysis is descriptive rather than causal. ACS estimates are subject to sampling uncertainty, and tract-level patterns cannot be directly interpreted as individual household experiences. Future analysis could incorporate rental prices, housing characteristics, and neighborhood demographics to better understand the factors associated with Philadelphia’s uneven housing burden.\nData source: U.S. Census Bureau, 2020–2024 American Community Survey five-year estimates, Tables B25070 and B19013.\n\n\nReproducibility\nThe R script used for data collection, processing, analysis, and visualization is available below.\nDownload the R source code: blog5.R"
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html",
+    "href": "blog/posts/post6/blog6.html",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "",
+    "text": "Computational Methods for Economists — Blog Post 6"
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#introduction",
+    "href": "blog/posts/post6/blog6.html#introduction",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Introduction",
+    "text": "Introduction\nHow strongly does parental income predict children’s economic outcomes? Answering this question requires connecting individuals across generations and following their incomes over time.\nIn this tutorial, we use SQL within Python to match parents and children, construct income measures, and estimate intergenerational income elasticity (IGE). We also explore why averaging income across multiple years can provide a better measure of long-run economic status."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#step-1-download-the-data",
+    "href": "blog/posts/post6/blog6.html#step-1-download-the-data",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Step 1: Download the Data",
+    "text": "Step 1: Download the Data\nWe use the Panel Study of Income Dynamics (PSID), a longitudinal survey tracking American families across generations.\nFirst, register for an account and open the PSID Data Center. Under Variable Search, select the 2017, 2019, 2021, and 2023 survey waves.\nSelect two categories of variables:\n\nIndividual-level: permanent identifiers (ER30001, ER30002), individual age, and yearly family interview numbers.\nFamily-level: yearly family interview numbers and total family income.\n\nAdd the variables to the Data Cart and download the customized dataset.\nNext, visit the Family Identification Mapping System (FIMS) to generate a prospective parent-to-child relationship file. This allows us to identify family relationships even when adult children have moved into different households."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#step-2-match-parents-and-children-using-sql",
+    "href": "blog/posts/post6/blog6.html#step-2-match-parents-and-children-using-sql",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Step 2: Match Parents and Children Using SQL",
+    "text": "Step 2: Match Parents and Children Using SQL\nAfter downloading the files, we load them into Python using pandas and create an in-memory database with sqlite3.\nFour SQL operations are particularly useful:\n\nSELECT retrieves identifiers, ages, and income variables.\nJOIN connects parent-child relationships with individual records and annual household income.\nGROUP BY organizes repeated observations by parent-child pair.\nAVG() calculates income averaged across multiple waves.\n\nFor example, after constructing a standardized annual income table, we can calculate average income using:\nSELECT\n    person_id,\n    AVG(income) AS avg_income,\n    COUNT(DISTINCT year) AS n_years\nFROM person_income\nWHERE income &gt; 0\nGROUP BY person_id;\nThis query calculates each individual’s average observed income. We then join these summaries to the parent-child relationship table using permanent identifiers.\nBefore estimating the model, we check matching quality, remove invalid income observations, and exclude records where parents and adult children share the same household income."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#step-3-estimate-intergenerational-income-elasticity",
+    "href": "blog/posts/post6/blog6.html#step-3-estimate-intergenerational-income-elasticity",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Step 3: Estimate Intergenerational Income Elasticity",
+    "text": "Step 3: Estimate Intergenerational Income Elasticity\nWe estimate the following log-log regression:\n\\[\n\\log(Y_{child}) =\n\\beta_0 + \\beta_1\\log(Y_{parent}) + \\varepsilon\n\\]\nHere, \\(\\beta_1\\) is the intergenerational income elasticity (IGE). A higher IGE generally indicates stronger persistence of economic status across generations.\n\n\n\n\n\n\nFigure 1: Relationship between parental and adult-child average log household income.\n\n\n\nUsing 2,074 matched parent-child pairs, the four-wave average produces an IGE of approximately 0.318."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#step-4-compare-single-year-and-multi-year-income",
+    "href": "blog/posts/post6/blog6.html#step-4-compare-single-year-and-multi-year-income",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Step 4: Compare Single-Year and Multi-Year Income",
+    "text": "Step 4: Compare Single-Year and Multi-Year Income\nSingle-year income may be affected by temporary unemployment, bonuses, or other short-term fluctuations. Averaging income across multiple waves can reduce such measurement noise.\n\n\n\n\n\n\nFigure 2: IGE estimates using individual survey waves and the four-wave average, with 95% confidence intervals.\n\n\n\nSingle-wave IGE estimates range from 0.207 to 0.261, below the four-wave estimate of 0.318.\nThis illustrates how income measurement choices can influence estimated intergenerational persistence."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#step-5-explore-life-cycle-bias",
+    "href": "blog/posts/post6/blog6.html#step-5-explore-life-cycle-bias",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Step 5: Explore Life-Cycle Bias",
+    "text": "Step 5: Explore Life-Cycle Bias\nIncome also changes throughout an individual’s career. Consequently, the age at which income is measured may affect estimated mobility.\nWe divide parents into three age groups and estimate IGE separately.\n\n\n\n\n\n\nFigure 3: Intergenerational income elasticity by parental age group, with 95% confidence intervals.\n\n\n\nThe estimated IGE increases from 0.147 for parents under 55 to 0.296 for ages 55–64 and 0.337 for ages 65 and above.\nThese differences highlight potential life-cycle measurement concerns, although age-group comparisons cannot establish causality or isolate life-cycle bias from cohort and sample-composition effects."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#conclusion",
+    "href": "blog/posts/post6/blog6.html#conclusion",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Conclusion",
+    "text": "Conclusion\nSQL provides a transparent way to construct longitudinal parent-child matches, while Python makes regression estimation and visualization straightforward. Our results illustrate why single-year income may not fully represent long-run economic status.\nMulti-wave averaging reduces some temporary fluctuations, but age differences and household composition remain important limitations."
+  },
+  {
+    "objectID": "blog/posts/post6/blog6.html#reproduce-this-analysis",
+    "href": "blog/posts/post6/blog6.html#reproduce-this-analysis",
+    "title": "From Family Records to Intergenerational Mobility",
+    "section": "Reproduce This Analysis",
+    "text": "Reproduce This Analysis\nThe complete Jupyter Notebook contains the Python code, SQL queries, data-processing steps, regressions, and visualizations.\nDownload the Python Notebook (blog6.ipynb)\nTo reproduce the workflow:\n\nDownload the required PSID variables and FIMS relationship file through the official websites.\nInstall the Python dependencies: pandas, numpy, python-calamine, statsmodels, and matplotlib.\nOpen blog6.ipynb and run the cells locally using appropriately authorized data.\n\nPSID data are not redistributed with this tutorial. Users should follow the dataset’s access and usage conditions."
   }
 ]
