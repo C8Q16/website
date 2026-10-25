@@ -1,0 +1,86 @@
+---
+title: "Exploring Income, Prices, and Spending Across U.S. States"
+subtitle: "A Beginner’s Guide to Interactive Visualization with R and Plotly"
+author: "Yixin Yang"
+date: "2026-10-25"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: cosmo
+    link-external-newwindow: true
+resources:
+  - output/**
+  - blog7.R
+---
+
+Computational Methods for Economists — Blog Post 7
+
+## What Can State-Level Spending Tell Us?
+
+Why does consumption per person differ across U.S. states? Higher spending might accompany higher incomes, higher prices, or different consumption patterns. This tutorial uses R and Plotly to explore these relationships through interactive rankings, a scatterplot, and time-series comparisons. Rather than presenting a single fixed view, the charts let readers choose categories, identify states, and investigate changes over time.
+
+## Step 1: Obtain and Organize the Data
+
+Download three ZIP archives from the [BEA Regional Data website](https://apps.bea.gov/regional/downloadzip.htm): SAPCE for consumption, SAINC for income and population, and SARPP for regional prices. Use tables SAPCE2, SAINC1, and SARPP, respectively. The analysis covers 50 states from 2008 through 2024, excluding Washington, D.C.
+
+In R, read the relevant CSV files directly from each ZIP archive. Clean state names before filtering: Alaska and Hawaii carry asterisks in the income table. Next, use `pivot_longer()` to turn year columns into a year variable, then join the datasets by state code and year. The resulting analytical table contains 850 state-year observations. Use `pivot_wider()` to create a state-by-category spending table.
+
+## Step 2: Compare Spending Across States
+
+The first chart ranks states by annual consumption per person. In 2024, Massachusetts recorded $71,233, compared with $43,772 in Mississippi. Pennsylvania recorded $59,483. These figures describe average consumption expenditure, not the spending of a representative household.
+
+Use the dropdown to compare categories such as groceries, health care, and housing. Hovering reveals both dollar amounts and shares of total consumption. This distinction matters: a state can spend more dollars on a category without allocating a larger share to it. Changing categories helps investigate whether a state’s position reflects broad spending levels or particular expenditure categories.
+
+<iframe
+  src="output/figure1_rankings.html"
+  title="Interactive consumption rankings by state and category"
+  width="100%"
+  height="1200"
+  loading="lazy"
+  style="border: none;">
+</iframe>
+
+*Figure 1. Consumption per person by state, 2024. Select a category from the dropdown and hover over a bar for details. Source: BEA.*
+
+## Step 3: Explore Income and Prices Together
+
+The scatterplot compares personal income per person with regional price parities (RPPs). An RPP of 100 represents the national price level in that year; values above 100 indicate higher prices.
+
+Across the 50 states in 2024, income and prices had a Pearson correlation of 0.714. California combined income of $86,761 per person with an RPP of 110.72. Pennsylvania’s income was $71,486, while its RPP was 97.57.
+
+Move the year slider and hover over individual points to examine other states. Colors distinguish regions, making geographic groupings easier to explore. The positive association does not establish causality, but it shows why income alone provides an incomplete comparison of purchasing power.
+
+<iframe
+  src="output/figure2_income_prices.html"
+  title="Interactive scatterplot of state income and regional prices"
+  width="100%"
+  height="650"
+  loading="lazy"
+  style="border: none;">
+</iframe>
+
+*Figure 2. Income per person and regional price parities, 2008–2024. Use the year slider and hover to identify states. Source: BEA.*
+
+## Step 4: Investigate Changes Over Time
+
+The final chart compares consumption trends for six selected states. Click legend entries to hide or restore states, and use the bottom slider to focus on a shorter period. This makes individual trajectories easier to inspect without permanently removing comparison states.
+
+However, these expenditures are measured in current dollars. An upward trend combines price changes with changes in consumption quantities and composition; it should not automatically be interpreted as improved living standards.
+
+<iframe
+  src="output/figure3_trends.html"
+  title="Interactive consumption trends for six selected states"
+  width="100%"
+  height="650"
+  loading="lazy"
+  style="border: none;">
+</iframe>
+
+*Figure 3. Consumption per person in selected states, 2008–2024, in current dollars. Click the legend to select states. Source: BEA.*
+
+## Interpretation and Reproduction
+
+Together, these charts illustrate how rankings, relationships, and trends answer different questions. State averages conceal household inequalities, and BEA consumption includes spending made on residents’ behalf. Readers can reproduce the analysis using the linked script and explore alternative states or categories.
+
+[Download the R code](blog7.R){download="blog7.R"}

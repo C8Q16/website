@@ -39,7 +39,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "From Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
+    "text": "Exploring Income, Prices, and Spending Across U.S. States\n\n\nA Beginner’s Guide to Interactive Visualization with R and Plotly\n\n\n\n\n\n\n\n\nOct 25, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
@@ -348,5 +348,54 @@
     "title": "From Family Records to Intergenerational Mobility",
     "section": "Reproduce This Analysis",
     "text": "Reproduce This Analysis\nThe complete Jupyter Notebook contains the Python code, SQL queries, data-processing steps, regressions, and visualizations.\nDownload the Python Notebook (blog6.ipynb)\nTo reproduce the workflow:\n\nDownload the required PSID variables and FIMS relationship file through the official websites.\nInstall the Python dependencies: pandas, numpy, python-calamine, statsmodels, and matplotlib.\nOpen blog6.ipynb and run the cells locally using appropriately authorized data.\n\nPSID data are not redistributed with this tutorial. Users should follow the dataset’s access and usage conditions."
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html",
+    "href": "blog/posts/post7/blog7.html",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "",
+    "text": "Computational Methods for Economists — Blog Post 7"
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html#what-can-state-level-spending-tell-us",
+    "href": "blog/posts/post7/blog7.html#what-can-state-level-spending-tell-us",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "What Can State-Level Spending Tell Us?",
+    "text": "What Can State-Level Spending Tell Us?\nWhy does consumption per person differ across U.S. states? Higher spending might accompany higher incomes, higher prices, or different consumption patterns. This tutorial uses R and Plotly to explore these relationships through interactive rankings, a scatterplot, and time-series comparisons. Rather than presenting a single fixed view, the charts let readers choose categories, identify states, and investigate changes over time."
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html#step-1-obtain-and-organize-the-data",
+    "href": "blog/posts/post7/blog7.html#step-1-obtain-and-organize-the-data",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "Step 1: Obtain and Organize the Data",
+    "text": "Step 1: Obtain and Organize the Data\nDownload three ZIP archives from the BEA Regional Data website: SAPCE for consumption, SAINC for income and population, and SARPP for regional prices. Use tables SAPCE2, SAINC1, and SARPP, respectively. The analysis covers 50 states from 2008 through 2024, excluding Washington, D.C.\nIn R, read the relevant CSV files directly from each ZIP archive. Clean state names before filtering: Alaska and Hawaii carry asterisks in the income table. Next, use pivot_longer() to turn year columns into a year variable, then join the datasets by state code and year. The resulting analytical table contains 850 state-year observations. Use pivot_wider() to create a state-by-category spending table."
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html#step-2-compare-spending-across-states",
+    "href": "blog/posts/post7/blog7.html#step-2-compare-spending-across-states",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "Step 2: Compare Spending Across States",
+    "text": "Step 2: Compare Spending Across States\nThe first chart ranks states by annual consumption per person. In 2024, Massachusetts recorded $71,233, compared with $43,772 in Mississippi. Pennsylvania recorded $59,483. These figures describe average consumption expenditure, not the spending of a representative household.\nUse the dropdown to compare categories such as groceries, health care, and housing. Hovering reveals both dollar amounts and shares of total consumption. This distinction matters: a state can spend more dollars on a category without allocating a larger share to it. Changing categories helps investigate whether a state’s position reflects broad spending levels or particular expenditure categories.\n\n\nFigure 1. Consumption per person by state, 2024. Select a category from the dropdown and hover over a bar for details. Source: BEA."
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html#step-3-explore-income-and-prices-together",
+    "href": "blog/posts/post7/blog7.html#step-3-explore-income-and-prices-together",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "Step 3: Explore Income and Prices Together",
+    "text": "Step 3: Explore Income and Prices Together\nThe scatterplot compares personal income per person with regional price parities (RPPs). An RPP of 100 represents the national price level in that year; values above 100 indicate higher prices.\nAcross the 50 states in 2024, income and prices had a Pearson correlation of 0.714. California combined income of $86,761 per person with an RPP of 110.72. Pennsylvania’s income was $71,486, while its RPP was 97.57.\nMove the year slider and hover over individual points to examine other states. Colors distinguish regions, making geographic groupings easier to explore. The positive association does not establish causality, but it shows why income alone provides an incomplete comparison of purchasing power.\n\n\nFigure 2. Income per person and regional price parities, 2008–2024. Use the year slider and hover to identify states. Source: BEA."
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html#step-4-investigate-changes-over-time",
+    "href": "blog/posts/post7/blog7.html#step-4-investigate-changes-over-time",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "Step 4: Investigate Changes Over Time",
+    "text": "Step 4: Investigate Changes Over Time\nThe final chart compares consumption trends for six selected states. Click legend entries to hide or restore states, and use the bottom slider to focus on a shorter period. This makes individual trajectories easier to inspect without permanently removing comparison states.\nHowever, these expenditures are measured in current dollars. An upward trend combines price changes with changes in consumption quantities and composition; it should not automatically be interpreted as improved living standards.\n\n\nFigure 3. Consumption per person in selected states, 2008–2024, in current dollars. Click the legend to select states. Source: BEA."
+  },
+  {
+    "objectID": "blog/posts/post7/blog7.html#interpretation-and-reproduction",
+    "href": "blog/posts/post7/blog7.html#interpretation-and-reproduction",
+    "title": "Exploring Income, Prices, and Spending Across U.S. States",
+    "section": "Interpretation and Reproduction",
+    "text": "Interpretation and Reproduction\nTogether, these charts illustrate how rankings, relationships, and trends answer different questions. State averages conceal household inequalities, and BEA consumption includes spending made on residents’ behalf. Readers can reproduce the analysis using the linked script and explore alternative states or categories.\nDownload the R code"
   }
 ]

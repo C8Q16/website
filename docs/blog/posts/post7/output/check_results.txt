@@ -1,0 +1,58 @@
+DATA VALIDATION
+States: 50 
+Years: 2008 - 2024 
+State-year rows: 850 
+
+MISSING VALUES
+# A tibble: 1 × 4
+  total_pce_per_capita income_per_capita population   rpp
+                 <int>             <int>      <int> <int>
+1                    0                 0          0     0
+
+TOP 10 STATES BY CONSUMPTION PER PERSON
+# A tibble: 10 × 4
+   state         total_pce_per_capita income_per_capita   rpp
+   <chr>                        <dbl>             <dbl> <dbl>
+ 1 Massachusetts                71233             94747 106. 
+ 2 New Hampshire                68543             84302 104. 
+ 3 California                   67227             86761 111. 
+ 4 Connecticut                  67040             97810 104. 
+ 5 Alaska                       66213             76842 102. 
+ 6 New York                     65804             86835 108. 
+ 7 New Jersey                   65696             85526 109. 
+ 8 Colorado                     65409             82498 103. 
+ 9 Washington                   62984             85192 107. 
+10 Vermont                      62432             72292  98.0
+
+LARGEST IMPROVEMENTS IN INCOME RANK
+# A tibble: 10 × 4
+   state        nominal_income_rank adjusted_income_rank rank_improvement
+   <chr>                      <int>                <int>            <int>
+ 1 Iowa                          36                   18               18
+ 2 North Dakota                  17                    5               12
+ 3 Oklahoma                      40                   28               12
+ 4 South Dakota                  16                    4               12
+ 5 Kansas                        32                   22               10
+ 6 Louisiana                     43                   33               10
+ 7 Missouri                      30                   20               10
+ 8 Nebraska                      18                    8               10
+ 9 Arkansas                      45                   36                9
+10 Ohio                          37                   32                5
+
+PEARSON CORRELATIONS IN SELECTED YEAR
+# A tibble: 1 × 2
+  income_vs_consumption income_vs_prices
+                  <dbl>            <dbl>
+1                 0.881            0.714
+
+PENNSYLVANIA SNAPSHOT
+# A tibble: 1 × 15
+  state_fips state         year total_pce_per_capita income_per_capita population   rpp region   
+  <chr>      <chr>        <int>                <dbl>             <dbl>      <dbl> <dbl> <fct>    
+1 42000      Pennsylvania  2024                59483             71486   13045848  97.6 Northeast
+  state_abbr price_adjusted_income pce_growth_pct income_growth_pct nominal_income_rank
+  <chr>                      <dbl>          <dbl>             <dbl>               <int>
+1 PA                        73265.           5.13              4.40                  22
+  adjusted_income_rank rank_improvement
+                 <int>            <int>
+1                   21                1
