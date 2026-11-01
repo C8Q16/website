@@ -39,7 +39,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Exploring Income, Prices, and Spending Across U.S. States\n\n\nA Beginner’s Guide to Interactive Visualization with R and Plotly\n\n\n\n\n\n\n\n\nOct 25, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
+    "text": "From Clicks to Confidence\n\n\nA Simulation Guide to Bootstrap Confidence Intervals and Hypothesis Testing\n\n\n\n\n\n\n\n\nNov 1, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Income, Prices, and Spending Across U.S. States\n\n\nA Beginner’s Guide to Interactive Visualization with R and Plotly\n\n\n\n\n\n\n\n\nOct 25, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
@@ -397,5 +397,40 @@
     "title": "Exploring Income, Prices, and Spending Across U.S. States",
     "section": "Interpretation and Reproduction",
     "text": "Interpretation and Reproduction\nTogether, these charts illustrate how rankings, relationships, and trends answer different questions. State averages conceal household inequalities, and BEA consumption includes spending made on residents’ behalf. Readers can reproduce the analysis using the linked script and explore alternative states or categories.\nDownload the R code"
+  },
+  {
+    "objectID": "blog/posts/post8/blog8.html",
+    "href": "blog/posts/post8/blog8.html",
+    "title": "From Clicks to Confidence",
+    "section": "",
+    "text": "Computational Methods for Economists — Blog Post 8\nAn online store observes that 12% of its visitors make a purchase. Does this mean its underlying conversion rate exceeds 10%, or could the difference reflect random variation? This tutorial uses a simulated store to explain bootstrap confidence intervals, coverage, and hypothesis testing. Knowing the true population parameter allows us to check how statistical inference performs across repeated samples."
+  },
+  {
+    "objectID": "blog/posts/post8/blog8.html#step-1-construct-a-bootstrap-confidence-interval",
+    "href": "blog/posts/post8/blog8.html#step-1-construct-a-bootstrap-confidence-interval",
+    "title": "From Clicks to Confidence",
+    "section": "Step 1: Construct a Bootstrap Confidence Interval",
+    "text": "Step 1: Construct a Bootstrap Confidence Interval\nStart in Python with NumPy and Matplotlib, setting the random seed to 42 for reproducibility. Assume each visitor independently purchases with probability 0.10. Generate 500 observations, coding purchases as 1 and non-purchases as 0. Their mean is the sample conversion rate. Our initial sample contains 45 purchases, giving an estimate of 9%.\nTo measure uncertainty, draw 500 observations with replacement from this same sample and calculate their mean. Repeat this process 2,000 times. Because sampling uses replacement, an observation can appear multiple times in a bootstrap sample.\nFigure 1 plots the resulting bootstrap distribution. Most estimates cluster around 9%, but they vary because each resample contains a different combination of observations. Taking the 2.5th and 97.5th percentiles produces a percentile bootstrap 95% confidence interval of [6.6%, 11.6%]. This interval includes the known population rate of 10%.\n\n\n\n\n\n\nFigure 1: Bootstrap distribution from 2,000 resamples of the initial sample. Dashed red lines mark the 95% confidence interval."
+  },
+  {
+    "objectID": "blog/posts/post8/blog8.html#step-2-investigate-what-95-confidence-means",
+    "href": "blog/posts/post8/blog8.html#step-2-investigate-what-95-confidence-means",
+    "title": "From Clicks to Confidence",
+    "section": "Step 2: Investigate What “95% Confidence” Means",
+    "text": "Step 2: Investigate What “95% Confidence” Means\nOne interval cannot establish whether a method has reliable coverage. To investigate, generate 1,000 independent samples from the population. For each sample, construct a confidence interval using 1,000 bootstrap resamples, then record whether it contains 10%.\nThis distinction matters: bootstrap resampling repeatedly draws from one existing sample, whereas the coverage experiment repeatedly generates new samples from the population.\nOf the 1,000 intervals, 952 contain the true rate, yielding estimated coverage of 95.2%. Figure 2 displays the first 100 intervals. Blue intervals cross the vertical line at 10%; red intervals miss it. The reported coverage uses all 1,000 intervals.\nThus, 95% confidence describes the long-run performance of the interval-building procedure. It does not assign a 95% probability to the fixed parameter lying inside one already calculated interval. Coverage is approximate and can change with the population, sample size, and interval method.\n\n\n\n\n\n\nFigure 2: The first 100 bootstrap confidence intervals. The vertical line marks the true rate of 10%; coverage across all 1,000 samples is 95.2%."
+  },
+  {
+    "objectID": "blog/posts/post8/blog8.html#step-3-simulate-a-hypothesis-test",
+    "href": "blog/posts/post8/blog8.html#step-3-simulate-a-hypothesis-test",
+    "title": "From Clicks to Confidence",
+    "section": "Step 3: Simulate a Hypothesis Test",
+    "text": "Step 3: Simulate a Hypothesis Test\nNow consider a separate illustrative observation: 60 purchases among 500 visitors, or 12%. This is a different teaching scenario from the initial sample. Test the null hypothesis that the population conversion rate is 10% against the one-sided alternative that it exceeds 10%:\n\\[\nH_0: p = 0.10\n\\qquad \\text{versus} \\qquad\nH_1: p &gt; 0.10.\n\\]\nUnder the null, simulate 50,000 samples of 500 visitors and count purchases in each sample. Figure 3 shows this null distribution.\nThe left panel marks the simulated 5% rejection region: 62 or more purchases. Because purchase counts are integers, its probability need not equal exactly 5%.\nThe right panel highlights outcomes at least as large as the observed 60 purchases. Their simulated probability, the p-value, is approximately 0.0807. If the true rate were 10%, results this high or higher would occur about 8.1% of the time.\nSince 0.0807 exceeds 0.05, we do not reject the null. This does not prove the rate equals 10%; the evidence is insufficient to conclude it is higher.\n\n\n\n\n\n\nFigure 3: Simulated purchase counts under the null hypothesis. Red bars show the rejection region; orange bars show the outcomes used to calculate the one-sided p-value.\n\n\n\nTogether, these simulations show how confidence intervals express estimation uncertainty and hypothesis tests assess observations against a specified null model."
+  },
+  {
+    "objectID": "blog/posts/post8/blog8.html#download-the-python-code",
+    "href": "blog/posts/post8/blog8.html#download-the-python-code",
+    "title": "From Clicks to Confidence",
+    "section": "Download the Python Code",
+    "text": "Download the Python Code\nTo reproduce the figures and results, download the notebook below. Run all cells in order using Python with NumPy and Matplotlib installed.\nDownload the Python notebook"
   }
 ]
