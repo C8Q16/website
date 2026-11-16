@@ -1,0 +1,4 @@
+Model,MAE (percentage points),RMSE (percentage points)
+Historical mean,6.425929312116415,8.887354401940645
+Classroom XGBoost (depth 5),6.849114267739396,9.370693402419409
+Shallower XGBoost (depth 2),6.644568875565246,9.126202014769053

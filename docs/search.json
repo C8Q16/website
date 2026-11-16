@@ -39,7 +39,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "From Clicks to Confidence\n\n\nA Simulation Guide to Bootstrap Confidence Intervals and Hypothesis Testing\n\n\n\n\n\n\n\n\nNov 1, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Income, Prices, and Spending Across U.S. States\n\n\nA Beginner’s Guide to Interactive Visualization with R and Plotly\n\n\n\n\n\n\n\n\nOct 25, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
+    "text": "Predicting Stock Returns with Gradient Boosting\n\n\n\n\n\n\n\n\n\n\n\nNov 16, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Clicks to Confidence\n\n\nA Simulation Guide to Bootstrap Confidence Intervals and Hypothesis Testing\n\n\n\n\n\n\n\n\nNov 1, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Income, Prices, and Spending Across U.S. States\n\n\nA Beginner’s Guide to Interactive Visualization with R and Plotly\n\n\n\n\n\n\n\n\nOct 25, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Family Records to Intergenerational Mobility\n\n\nMatching Parents and Children with SQL in Python\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Geography of Rent Burden in Philadelphia\n\n\nHousehold Income and Housing Affordability Across Census Tracts\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Has U.S. Housing Become Less Affordable?\n\n\nHome Prices, Household Income, and Mortgage Rates, 2000–2025\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nHow Does Labor Force Participation Vary Across Age, Gender, and Education?\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nSEPTA Metro and Trolley: A Guide for a New Penn Student\n\n\n\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nYixin Yang\n\n\n\n\n\n\n\n\n\n\n\n\nThe Illusion of Significance: Rethinking the p-value Through A/B Testing\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\nYixin Yang\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/Untitled.html",
@@ -432,5 +432,47 @@
     "title": "From Clicks to Confidence",
     "section": "Download the Python Code",
     "text": "Download the Python Code\nTo reproduce the figures and results, download the notebook below. Run all cells in order using Python with NumPy and Matplotlib installed.\nDownload the Python notebook"
+  },
+  {
+    "objectID": "blog/posts/post9/blog9.html",
+    "href": "blog/posts/post9/blog9.html",
+    "title": "Predicting Stock Returns with Gradient Boosting",
+    "section": "",
+    "text": "Computational Methods for Economists — Blog Post 9"
+  },
+  {
+    "objectID": "blog/posts/post9/blog9.html#the-classroom-experiment",
+    "href": "blog/posts/post9/blog9.html#the-classroom-experiment",
+    "title": "Predicting Stock Returns with Gradient Boosting",
+    "section": "The classroom experiment",
+    "text": "The classroom experiment\nIn our classroom game, 45 teams built two portfolios, one based on intuition and the other on stock indicators. The indicator-based portfolios finished at an average of $103,087, compared with $101,179 for the intuition-based portfolios. The boxplot shows a higher median and a wider spread for the indicator-based portfolios. A paired t-test gave a two-sided p-value of 0.100, so the evidence of an advantage was limited.\n\n\n\nFinal values of the two portfolios across 45 teams.\n\n\nStock returns are difficult to forecast because prices respond to information, such as earnings surprises, that is unavailable when a forecast is made. Patterns in historical prices can also weaken as market conditions change."
+  },
+  {
+    "objectID": "blog/posts/post9/blog9.html#a-shallower-xgboost-model",
+    "href": "blog/posts/post9/blog9.html#a-shallower-xgboost-model",
+    "title": "Predicting Stock Returns with Gradient Boosting",
+    "section": "A shallower XGBoost model",
+    "text": "A shallower XGBoost model\nI reproduced the classroom model in Python using daily Yahoo Finance data. It used price, volume, momentum, volatility, and other indicators to forecast the return from the next trading day’s close to the twentieth trading day’s close. I reduced the maximum tree depth from five to two while holding the other model settings fixed. Deeper trees can learn more specific combinations of signals. If those combinations reflect noise in the training period, a shallower tree may perform better on future data.\nBoth models were trained on observations whose forward returns were fully known before January 2024 and evaluated on the same observations from January 2024 onward. The simple benchmark used the same training-period average return as its forecast for every stock."
+  },
+  {
+    "objectID": "blog/posts/post9/blog9.html#out-of-sample-prediction-accuracy",
+    "href": "blog/posts/post9/blog9.html#out-of-sample-prediction-accuracy",
+    "title": "Predicting Stock Returns with Gradient Boosting",
+    "section": "Out-of-sample prediction accuracy",
+    "text": "Out-of-sample prediction accuracy\n\n\n\nModel\nMAE (percentage points)\nRMSE (percentage points)\n\n\n\n\nHistorical mean\n6.426\n8.887\n\n\nClassroom XGBoost (depth 5)\n6.849\n9.371\n\n\nShallower XGBoost (depth 2)\n6.645\n9.126\n\n\n\nThe shallower model reduced mean absolute error by about 3% relative to the classroom model. It also reduced RMSE, which gives larger errors more weight. The historical mean produced the lowest error on both measures."
+  },
+  {
+    "objectID": "blog/posts/post9/blog9.html#portfolio-performance",
+    "href": "blog/posts/post9/blog9.html#portfolio-performance",
+    "title": "Predicting Stock Returns with Gradient Boosting",
+    "section": "Portfolio performance",
+    "text": "Portfolio performance\nEvery 20 trading sessions, I formed an equal-weight portfolio of each model’s ten highest-ranked stocks. I compared the portfolios with an equal-weight stock universe and SPY over the same holding windows.\n\n\n\nGrowth of $1 across 36 out-of-sample holding periods.\n\n\nAcross 36 holding periods, the shallow-tree portfolio gained 77.86%, compared with 62.91% for the classroom model, 61.50% for the equal-weight stock universe, and 58.48% for SPY. Forecast errors measure how close predictions are to realized returns across all stocks. The trading rule only uses the top of the ranking. The historical mean can forecast reasonably well by predicting a typical return, but its identical forecasts cannot distinguish among stocks. The shallow model’s top picks earned the highest return in this backtest. Whether that advantage would persist after trading costs or in another test period remains open."
+  },
+  {
+    "objectID": "blog/posts/post9/blog9.html#downloads",
+    "href": "blog/posts/post9/blog9.html#downloads",
+    "title": "Predicting Stock Returns with Gradient Boosting",
+    "section": "Downloads",
+    "text": "Downloads\n\nDownload the Python notebook (.ipynb)\nDownload the prediction metrics (.csv)"
   }
 ]
